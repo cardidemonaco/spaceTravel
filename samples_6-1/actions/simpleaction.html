@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>dynaTrace JavaScript ADK</title>
+        <script type="text/javascript" src="../dtagentApi.js"></script>
+
+        <script type="text/javascript">
+
+            function performAction(){
+                
+                
+            	var action=dynaTrace.enterAction('simple action','click');
+            	//same as: var action=dynaTrace.enterAction('simple action','click',null,null);
+
+                //do something here
+                dynaTrace.reportEvent('Message during custom action!');
+
+                dynaTrace.leaveAction(action);
+            }
+        </script>
+	</head>
+
+<body>
+
+<button onclick="performAction()">Perform action</button><br/>
+
+
+
+
+<br/>
+<br/>
+<a href="../index.html">Back</a>
+</body>
+</html>

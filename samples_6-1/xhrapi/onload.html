@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>dynaTrace JavaScript ADK</title>
+        <script type="text/javascript" src="../dtagentApi.js"></script>
+        <script type="text/javascript">
+
+	        function getXhr(){
+				if(typeof window.ActiveXObject!='undefined'){//IE
+					var activeXObjectNames=['Microsoft.XMLHTTP','Msxml2.XMLHTTP','Msxml2.XMLHTTP.6.0','Msxml2.XMLHTTP.3.0'];
+
+					for(var i=0;i<activeXObjectNames.length;i++){
+						try{
+							var r=new window.ActiveXObject(activeXObjectNames[i]);
+							return r;
+						}catch(e){
+						}
+					}
+
+				}else if(typeof window.XMLHttpRequest!='undefined'){//other browsers
+					return new XMLHttpRequest();
+				}
+	            throw 'Could not create ActiveXObject!';
+			}
+
+        	function initFrameWork(){
+        		dynaTrace.incrementOnLoadEndMarkers();
+        		dynaTrace.signalOnLoadStart();
+        		var xhr=getXhr();
+        		xhr.open('GET', 'ajax.txt', false);
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState == 4) {
+                        document.getElementById('resultDiv').innerHTML='Framework load finished';
+					}
+
+					dynaTrace.signalOnLoadEnd();
+				};
+				xhr.send(null);
+
+        	}
+        </script>
+	</head>
+
+
+
+<body onload="initFrameWork()">
+
+
+
+
+<div id="resultDiv">Result will be displayed here when framework is loaded completely!</div>
+
+<br/>
+<br/>
+<a href="../index.html">Back</a>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<%@ Master Language="VB" CodeFile="OfPuppets.master.vb" Inherits="MasterOfPuppets" %>
+
+<%@ Register src="Menu.ascx" tagname="Menu" tagprefix="uc1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>spaceTravel Test Web Application | by Cardi DeMonaco Jr</title>
+     <style>
+        body{
+            background-color: black;
+            color: whitesmoke;
+        }
+
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+       
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <uc1:Menu ID="Menu2" runat="server" />
+        <h1>spaceTravel Application <img src="/img/moon.jpg" /></h1>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            <br /><br />
+        </asp:ContentPlaceHolder>
+            <br />
+        <uc1:Menu ID="Menu1" runat="server" />
+    </div>
+    </form>
+</body>
+</html>

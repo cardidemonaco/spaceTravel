@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>dynaTrace JavaScript ADK</title>
+    <script type="text/javascript" src="../dtagentApi.js"></script>
+    <script type="text/javascript" src="../../_scripts/jquery/1.8.0/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#jqxhr').click(function(){
+                $.post("../../jsagent/ajax.jsp", {sleep: 500}, function(result){
+                    $('#result').append($('<div></div>').text(result));
+
+                });
+                //(forceSync, sendPreview, killUnfinished)
+                var time = Date.now();
+                dynaTrace.sendSignal(false, true);
+                console.log("sync sending took " + (Date.now() - time) + "ms");
+            });
+        });
+    </script>
+</head>
+<body>
+<button id = "jqxhr">Send signal after successful xhr</button>
+<div id='result'></div>
+</body>
+</html>
