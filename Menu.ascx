@@ -53,6 +53,7 @@
             <asp:MenuItem Text="JavaScript Example" Value="JavaScript Example" NavigateUrl="~/JavaScriptADK/JavaScriptADK_Examples.aspx"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/SilverlightApplicationTestPage.aspx" Text="Silverlight Example" Value="Silverlight Example"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/JavaScriptADK/SUPDT-5037.aspx" Text="SUPDT-5037" Value="SUPDT-5037"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/JavaScriptADK/JavaScriptADK_Examples_6-1.aspx" Text="endVisit" Value="endVisit"></asp:MenuItem>
         </asp:MenuItem>
         <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithATaggedWebRequest.aspx" Text="Run Load Test" Value="Run Load Test"></asp:MenuItem>
         <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithPerformanceWarehouseData.aspx" Text="dynaTrace Stats" Value="dynaTrace Stats"></asp:MenuItem>
