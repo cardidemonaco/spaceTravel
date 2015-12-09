@@ -25,4 +25,18 @@
       <Column Name="rtbtf_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.[dynatrace-category]" Member="dynatrace_categories">
+    <Type Name="dynatrace_category">
+      <Column Name="category_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="category_name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="category_description" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.link" Member="links">
+    <Type Name="link">
+      <Column Name="link_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="link_name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="link_url" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

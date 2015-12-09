@@ -1,35 +1,20 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/OfPuppets.master" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="DefaultHome" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>spaceTravel</title>
     <style type="text/css">
-        body
-        {
-            color: whitesmoke;
-        }
-    a
-    {
-        color: White;
-    }
-    a:hover 
-    {
-        text-decoration: underline;
-    }
-    .style1
-    {
-        width: 184px;
-        height: 120px;
-    }
+        body{ color: whitesmoke; }
+        a{ color: White; }
+        a:hover { text-decoration: underline; }
+        .style1 { width: 184px; height: 120px; }
     </style>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     
     <div>
-       
-        <p>This Application is used to help understand dynaTrace.&nbsp; Connect to my 
+        <p>This Application is used to help understand dynaTrace. Connect to my 
             dynaTrace Server in your Client using the following credentials:</p>
-        <p>Host: cd-dt-0506-p.clients.nasa.cpwr.corp (10.30.3.48)<br />
+        <p>Host: cd-dt-0506-p.clients.nasa.cpwr.corp<br />
             Port: 2021<br />
             User Name: admin<br />
             Password: admin<br />
@@ -40,7 +25,15 @@
             <a target="_blank" href="http://cd-dt-0506-p.clients.nasa.cpwr.corp:8020/webstart/Client/client.jnlp">Webstart Client</a>
         </p>
         <p>
-            <asp:GridView ID="gvLinks" runat="server">
+            <strong>New Link</strong><br />
+            <asp:TextBox ID="txtLinkName" runat="server">Link Name</asp:TextBox>
+            <br />
+            <asp:TextBox ID="txtLinkUrl" runat="server">Link URL</asp:TextBox>
+            <br />
+            <asp:Button ID="btnLinkNew" runat="server" CausesValidation="False" Text="Add Link to Database" />
+        </p>
+        <p>
+            <asp:GridView ID="gvLinks" runat="server" CellPadding="4">
             </asp:GridView>
         </p>
         
@@ -54,7 +47,7 @@
         <br />
         <input id="btnMouseUp" type="button" value="Click here for MouseUp" onmouseup="alert('Hi!!!');" /><br />
     </div>
-    </form>
+
     <p>
         <img alt="Microsoft .NET Framework" class="style1" 
             src="img/microsoft-net-framework-3_jpg.png" /></p>

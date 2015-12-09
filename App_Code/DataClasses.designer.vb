@@ -49,6 +49,12 @@ Partial Public Class DataClassesDataContext
     End Sub
   Partial Private Sub DeleteRTBTF(instance As RTBTF)
     End Sub
+  Partial Private Sub Insertlink(instance As link)
+    End Sub
+  Partial Private Sub Updatelink(instance As link)
+    End Sub
+  Partial Private Sub Deletelink(instance As link)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -91,6 +97,18 @@ Partial Public Class DataClassesDataContext
 	Public ReadOnly Property RTBTFs() As System.Data.Linq.Table(Of RTBTF)
 		Get
 			Return Me.GetTable(Of RTBTF)
+		End Get
+	End Property
+	
+	Public ReadOnly Property dynatrace_categories() As System.Data.Linq.Table(Of dynatrace_category)
+		Get
+			Return Me.GetTable(Of dynatrace_category)
+		End Get
+	End Property
+	
+	Public ReadOnly Property links() As System.Data.Linq.Table(Of link)
+		Get
+			Return Me.GetTable(Of link)
 		End Get
 	End Property
 End Class
@@ -479,6 +497,163 @@ Partial Public Class RTBTF
 				Me._rtbtf_datetime = value
 				Me.SendPropertyChanged("rtbtf_datetime")
 				Me.Onrtbtf_datetimeChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.[dynatrace-category]")>  _
+Partial Public Class dynatrace_category
+	
+	Private _category_id As Integer
+	
+	Private _category_name As String
+	
+	Private _category_description As String
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_category_id", DbType:="Int NOT NULL")>  _
+	Public Property category_id() As Integer
+		Get
+			Return Me._category_id
+		End Get
+		Set
+			If ((Me._category_id = value)  _
+						= false) Then
+				Me._category_id = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_category_name", DbType:="VarChar(100) NOT NULL", CanBeNull:=false)>  _
+	Public Property category_name() As String
+		Get
+			Return Me._category_name
+		End Get
+		Set
+			If (String.Equals(Me._category_name, value) = false) Then
+				Me._category_name = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_category_description", DbType:="VarChar(5000)")>  _
+	Public Property category_description() As String
+		Get
+			Return Me._category_description
+		End Get
+		Set
+			If (String.Equals(Me._category_description, value) = false) Then
+				Me._category_description = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.link")>  _
+Partial Public Class link
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _link_id As Integer
+	
+	Private _link_name As String
+	
+	Private _link_url As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub Onlink_idChanging(value As Integer)
+    End Sub
+    Partial Private Sub Onlink_idChanged()
+    End Sub
+    Partial Private Sub Onlink_nameChanging(value As String)
+    End Sub
+    Partial Private Sub Onlink_nameChanged()
+    End Sub
+    Partial Private Sub Onlink_urlChanging(value As String)
+    End Sub
+    Partial Private Sub Onlink_urlChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_link_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property link_id() As Integer
+		Get
+			Return Me._link_id
+		End Get
+		Set
+			If ((Me._link_id = value)  _
+						= false) Then
+				Me.Onlink_idChanging(value)
+				Me.SendPropertyChanging
+				Me._link_id = value
+				Me.SendPropertyChanged("link_id")
+				Me.Onlink_idChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_link_name", DbType:="VarChar(500)")>  _
+	Public Property link_name() As String
+		Get
+			Return Me._link_name
+		End Get
+		Set
+			If (String.Equals(Me._link_name, value) = false) Then
+				Me.Onlink_nameChanging(value)
+				Me.SendPropertyChanging
+				Me._link_name = value
+				Me.SendPropertyChanged("link_name")
+				Me.Onlink_nameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_link_url", DbType:="VarChar(5000) NOT NULL", CanBeNull:=false)>  _
+	Public Property link_url() As String
+		Get
+			Return Me._link_url
+		End Get
+		Set
+			If (String.Equals(Me._link_url, value) = false) Then
+				Me.Onlink_urlChanging(value)
+				Me.SendPropertyChanging
+				Me._link_url = value
+				Me.SendPropertyChanged("link_url")
+				Me.Onlink_urlChanged
 			End If
 		End Set
 	End Property
