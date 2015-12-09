@@ -2,24 +2,24 @@
 <asp:Menu ID="MainMenu" runat="server" ForeColor="WhiteSmoke" Orientation="Horizontal">
     <DynamicMenuStyle BackColor="Black" />
     <Items>
-        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="spaceTravel HOME" 
-            Value="spaceTravel HOME"></asp:MenuItem>
-        <asp:MenuItem Text="Create a PurePath..." Value="Create a PurePath...">
-            <asp:MenuItem Text="Of a Certain Length..." Value="Of a Certain Length">
+        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="HOME" 
+            Value="HOME"></asp:MenuItem>
+        <asp:MenuItem Text="Create a PurePath..." Value="Create a PurePath..." NavigateUrl="~/CreateAPurePath/WithADatabaseQuery.aspx">
+            <asp:MenuItem Text="Of a Certain Length..." Value="Of a Certain Length" NavigateUrl="~/CreateAPurePath/ThreadingSleep.aspx">
                 <asp:MenuItem NavigateUrl="~/CreateAPurePath/ThreadingSleep.aspx" Text="With a Variable Sleep Time" Value="With a Variable Sleep Time"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/CreateAPurePath/LastingApproximately05Seconds.aspx" Text="Lasting Approximately 5 Seconds" Value="Lasting Approximately 5 Seconds"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/CreateAPurePath/LastingApproximately10Seconds.aspx" Text="Lasting Approximately 10 Seconds" Value="Lasting Approximately 10 Seconds"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/CreateAPurePath/LastingApproximately15Seconds.aspx" Text="Lasting Approximately 15 Seconds" Value="Lasting Approximately 15 Seconds"></asp:MenuItem>
             </asp:MenuItem>
             <asp:MenuItem 
-                Text="With a Database Query" 
-                Value="With a Database Query">
+                Text="With a Database Query..." 
+                Value="With a Database Query" NavigateUrl="~/CreateAPurePath/WithADatabaseQuery.aspx">
                 <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithADatabaseQuery.aspx" Text="And WHERE Clause" Value="With a Database Query"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithADBQuery.aspx" Text="Taking Advantage of Statement Aggregation" Value="With a Database Query that takes advantage of Statement Aggregation"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/Database/RunStoredProcedure.aspx" Text="As a Stored Procedure (with Parameters?)" Value="That Has a Stored Procedure (with Parameters?)"></asp:MenuItem>
             </asp:MenuItem>
             <asp:MenuItem 
-                Text="Capturing Values" Value="Capturing Values">
+                Text="Capturing Values..." Value="Capturing Values" NavigateUrl="~/CreateAPurePath/WithDeepObjectAccess.aspx">
                 <asp:MenuItem NavigateUrl="~/Math/Algebra.aspx" Text="From Parameters" Value="That Uses Custom Measures"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/Pages/ReturnValue.aspx" Text="From the Return Value" Value="That Has a Method with a Return Value"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithDeepObjectAccess.aspx" Text="Using Deep Object Access" Value="With Deep Object Access"></asp:MenuItem>
@@ -31,7 +31,7 @@
             <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithAVisualBasicClass.aspx" Text="With a Visual Basic Class" Value="With a Visual Basic Class"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/img/moon.jpg" Text="That Contains an Image" Value="That Contains an Image"></asp:MenuItem>
         </asp:MenuItem>
-        <asp:MenuItem Text="UEM: Create a Visit..." Value="UEM: Create a Visit...">
+        <asp:MenuItem Text="UEM: Create a Visit..." Value="UEM: Create a Visit..." NavigateUrl="~/Pages/Page01.aspx">
             <asp:MenuItem NavigateUrl="~/Pages/Page01.aspx" 
                 Text="With Many Different Web Requests / Page Actions" 
                 Value="With Many Different Web Requests / Page Actions"></asp:MenuItem>
@@ -40,8 +40,8 @@
             <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/WithAnIframe.aspx" Text="With an IFRAME" Value="With an IFRAME"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/Cookies.aspx" Text="With a Cookie" Value="With a Cookie"></asp:MenuItem>
         </asp:MenuItem>
-        <asp:MenuItem Text="UEM: Health Check..." Value="UEM: Health Check">
-            <asp:MenuItem NavigateUrl="https://community.compuwareapm.com/community/display/DOCDT55/UEM+Health+Check" 
+        <asp:MenuItem Text="UEM: Health Check..." Value="UEM: Health Check" NavigateUrl="~/Pages/InjectionCheck-TestPageContainsInvalidHtml.aspx">
+            <asp:MenuItem NavigateUrl="https://community.compuwareapm.com/community/display/DOCDT62/UEM+Health+Check" 
                 Text="DOCUMENTATION: UEM Health Check" Value="DOCUMENTATION: UEM Health Check">
             </asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/Pages/InjectionCheck-TestPageContainsInvalidHtml.aspx" 
@@ -51,13 +51,13 @@
             <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/FifteenPuzzle.aspx" Text="Fifteen Puzzle" Value="Fifteen Puzzle"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/samples/index.html" Text="Samples" Value="Samples"></asp:MenuItem>
             <asp:MenuItem Text="JavaScript Example" Value="JavaScript Example" NavigateUrl="~/JavaScriptADK/JavaScriptADK_Examples.aspx"></asp:MenuItem>
-            <asp:MenuItem NavigateUrl="~/SilverlightApplicationTestPage.aspx" Text="Silverlight Example" Value="Silverlight Example"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/Silverlight/SilverlightApplicationTestPage.aspx" Text="Silverlight Example" Value="Silverlight Example"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/JavaScriptADK/SUPDT-5037.aspx" Text="SUPDT-5037" Value="SUPDT-5037"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/JavaScriptADK/JavaScriptADK_Examples_6-1.aspx" Text="endVisit" Value="endVisit"></asp:MenuItem>
         </asp:MenuItem>
         <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithATaggedWebRequest.aspx" Text="Run Load Test" Value="Run Load Test"></asp:MenuItem>
         <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithPerformanceWarehouseData.aspx" Text="dynaTrace Stats" Value="dynaTrace Stats"></asp:MenuItem>
-        <asp:MenuItem NavigateUrl="~/RTBTF/Default.aspx" Text="RTBTF" Value="RTBTF">
+        <asp:MenuItem NavigateUrl="~/RTBTF/Default2.aspx" Text="RTBTF..." Value="RTBTF">
             <asp:MenuItem NavigateUrl="~/RTBTF/Default.aspx" Text="Adds Blank Row" Value="RTBTF"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/RTBTF/Default2.aspx" Text="View Only" Value="RTBTF View Only"></asp:MenuItem>
         </asp:MenuItem>
