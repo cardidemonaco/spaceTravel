@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>dynaTrace JavaScript ADK</title>
+        <script type="text/javascript" src="../dtagentApi.js"></script>
+
+        <script type="text/javascript">
+
+            function performAction(){
+                dynaTrace.enterAction('change page','timeout');
+                top.location.href='../index.html';
+            }
+        </script>
+	</head>
+
+<body onload="setTimeout(performAction,5000)">
+
+Page change is done 5 seconds after load via timout!
+
+
+
+
+<br/>
+<br/>
+<a href="../index.html">Back</a>
+</body>
+</html>

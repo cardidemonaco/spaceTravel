@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://spaceTravel/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://spaceTravel/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://spaceTravel/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateSalesTax">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateSalesTaxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateSalesTaxResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateSalesTaxUsingPercentage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="amount" />
+            <s:element minOccurs="0" maxOccurs="1" name="taxPercentage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateSalesTaxUsingPercentageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateSalesTaxUsingPercentageResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoubleMe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoubleMeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DoubleMeResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateSalesTaxSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateSalesTax" />
+  </wsdl:message>
+  <wsdl:message name="CalculateSalesTaxSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateSalesTaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateSalesTaxUsingPercentageSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateSalesTaxUsingPercentage" />
+  </wsdl:message>
+  <wsdl:message name="CalculateSalesTaxUsingPercentageSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateSalesTaxUsingPercentageResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoubleMeSoapIn">
+    <wsdl:part name="parameters" element="tns:DoubleMe" />
+  </wsdl:message>
+  <wsdl:message name="DoubleMeSoapOut">
+    <wsdl:part name="parameters" element="tns:DoubleMeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SalesTaxCalculatorSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateSalesTax">
+      <wsdl:input message="tns:CalculateSalesTaxSoapIn" />
+      <wsdl:output message="tns:CalculateSalesTaxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateSalesTaxUsingPercentage">
+      <wsdl:input message="tns:CalculateSalesTaxUsingPercentageSoapIn" />
+      <wsdl:output message="tns:CalculateSalesTaxUsingPercentageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoubleMe">
+      <wsdl:input message="tns:DoubleMeSoapIn" />
+      <wsdl:output message="tns:DoubleMeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SalesTaxCalculatorSoap" type="tns:SalesTaxCalculatorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://spaceTravel/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateSalesTax">
+      <soap:operation soapAction="http://spaceTravel/CalculateSalesTax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateSalesTaxUsingPercentage">
+      <soap:operation soapAction="http://spaceTravel/CalculateSalesTaxUsingPercentage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoubleMe">
+      <soap:operation soapAction="http://spaceTravel/DoubleMe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SalesTaxCalculatorSoap12" type="tns:SalesTaxCalculatorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://spaceTravel/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateSalesTax">
+      <soap12:operation soapAction="http://spaceTravel/CalculateSalesTax" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateSalesTaxUsingPercentage">
+      <soap12:operation soapAction="http://spaceTravel/CalculateSalesTaxUsingPercentage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoubleMe">
+      <soap12:operation soapAction="http://spaceTravel/DoubleMe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SalesTaxCalculator">
+    <wsdl:port name="SalesTaxCalculatorSoap" binding="tns:SalesTaxCalculatorSoap">
+      <soap:address location="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/SalesTaxCalculator.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SalesTaxCalculatorSoap12" binding="tns:SalesTaxCalculatorSoap12">
+      <soap12:address location="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/SalesTaxCalculator.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

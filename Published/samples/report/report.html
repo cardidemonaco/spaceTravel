@@ -1,0 +1,112 @@
+<html>
+<head>
+	<title>dynaTrace JavaScript ADK</title>
+    <script type="text/javascript" src="../dtagentApi.js"></script>
+    <script type="text/javascript" src="../../_scripts/jquery/1.8.0/jquery.js"></script>
+	<style>
+
+	#result {
+		position: absolute;
+		width: 300px;
+		border: 1px solid black;
+		right: 20px;
+
+	}
+
+	</style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function performAjaxError(src){
+	$.ajax(
+		{
+			url: "../../jsagent/ajax.jsp",
+		    success: function(data, textStatus, jqXHR) {
+				$("#result").append("<li>" +  data + "</li>");
+				dynaTrace.reportError('Error: Hello World with AJAX!');
+			}
+		}
+	);
+}
+
+
+function performAjaxValue(src){
+	$.ajax(
+		{
+			url: "../../jsagent/ajax.jsp",
+		    success: function(data, textStatus, jqXHR) {
+				$("#result").append("<li>" +  data + "</li>");
+				dynaTrace.reportValue('customvalue',17);
+			}
+		}
+	);
+}
+
+function performAjaxString(src){
+    $.ajax(
+        {
+            url: "../../jsagent/ajax.jsp",
+            success: function(data, textStatus, jqXHR) {
+                $("#result").append("<li>" +  data + "</li>");
+                dynaTrace.reportString('customstring','Hello World!');
+            }
+        }
+    );
+}
+
+function randomReportValues(src, min, max, count){
+
+	if(count > 0){
+		src.disabled = "disabled";
+		var value = randomFromInterval(min, max);
+		dynaTrace.reportValue('customvalue', value);
+		$("#result").append("<li>reporting value " + value + "</li>");
+
+		window.setTimeout(function() {
+			randomReportValues(src, min, max, count -1);
+		}, 20000);
+	} else {
+		$("#result").append("<li>done reporting</li>");
+		src.disabled = "";
+	}
+}
+
+function randomFromInterval(from,to)
+{
+    return Math.floor(Math.random()*(to-from+1)+from);
+}
+
+
+function addStreamingNode(type, src){
+	if (type == 'video') {
+		dynaTrace.addStreamingNode("http://localhost.at/ajax/video.mp4", 30, true, true, 20, 40, 2, 2, "_" + type + "_");
+	} else {
+		dynaTrace.addStreamingNode("http://localhost.at/ajax/audio.mp3", 30, true, true, 20, 40, 2, 2, "_" + type + "_");
+	}
+}
+
+
+</script>
+<ul id="result"></ul>
+<button onclick="dynaTrace.reportEvent('Log: Hello World!')">Report event</button><br/>
+<button onclick="dynaTrace.reportWarning('Warning: Hello World!')">Report Warning</button><br/>
+<button onclick="dynaTrace.reportError('Error: Hello World!')">Report Error</button><br/>
+<button onclick="dynaTrace.reportValue('customvalue',17)">Report Value 17</button><br/>
+<button onclick="dynaTrace.reportString('customstring','Hello World')">Report String "Hello World"</button><br/>
+<button onclick="addStreamingNode('video', this)">Report streaming video</button><br/>
+<button onclick="addStreamingNode('audio', this)">Report streaming audio</button><br/>
+<button onclick="performAjaxError(this)" id="performAJAXError">Report Error with AJAX</button><br/>
+<button onclick="performAjaxValue(this)" id="performAJAXValue">Report Value with AJAX</button>
+<button onclick="performAjaxString(this)" id="performAJAXString">Report String with AJAX</button>
+<hr/>
+<button onclick="randomReportValues(this, 10, 30, 5)">Report random values</button><br/>
+<br/>
+<br/>
+
+
+
+<a href="../index.html">Back</a>
+</body>
+</html>

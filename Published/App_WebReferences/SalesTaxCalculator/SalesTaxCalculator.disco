@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/SalesTaxCalculator.asmx?wsdl" docRef="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/SalesTaxCalculator.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/SalesTaxCalculator.asmx" xmlns:q1="http://spaceTravel/" binding="q1:SalesTaxCalculatorSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/SalesTaxCalculator.asmx" xmlns:q2="http://spaceTravel/" binding="q2:SalesTaxCalculatorSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

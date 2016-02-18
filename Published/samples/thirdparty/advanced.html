@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title>dynaTrace JavaScript ADK</title>
+        <script type="text/javascript" src="../dtagentApi.js"></script>
+
+        <script type="text/javascript">
+        
+        	var cssUrl= location.href.substring(0,location.href.lastIndexOf('/'))+'/test.css';
+        	
+        	var cssElement;
+        
+        	function checkLoaded(){
+       		    var sheet, cssRules;
+	       		// get the correct properties to check for depending on the browser
+      		   if ( 'sheet' in cssElement ) {
+      		      sheet = 'sheet'; 
+      		      cssRules = 'cssRules';
+      		   } else {
+      		      sheet = 'styleSheet'; 
+      		      cssRules = 'rules';
+      		   }
+        		
+	       		try{
+		       		if(cssElement[sheet] && cssElement[sheet][cssRules] && cssElement[sheet][cssRules].length>0){
+		       			dynaTrace.stopThirdParty(cssUrl,true,-1,-1);
+		       			return;
+		       		}
+	       		}catch(e){
+	       			//unfinished
+	       		}
+	       		
+	       		//when file not loaded yet, reschedule check in 20 ms
+	       		setTimeout(checkLoaded,20);
+	       		
+        			
+        	}
+        	
+        	function init(){
+        		//add a css file dynamically 
+            	dynaTrace.startThirdParty('c',cssUrl);
+            	cssElement=document.createElement('link');
+            	cssElement.setAttribute('rel', 'stylesheet');
+            	cssElement.setAttribute('type', 'text/css');
+            	cssElement.setAttribute('href', cssUrl);
+            	
+            	var head = document.getElementsByTagName('head')[0];                
+            	head.appendChild(cssElement);
+            	 
+            	//check if file loaded
+            	checkLoaded();            
+        	}	
+
+        </script>
+        
+	</head>
+
+
+
+<body onload="init()">
+
+
+
+Custom css is added to third party content.
+
+<br/>
+<br/>
+<a href="../index.html">Back</a>
+</body>
+</html>
