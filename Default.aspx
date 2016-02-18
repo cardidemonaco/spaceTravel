@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/OfPuppets.master" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="DefaultHome" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <title>#spaceTravel, a .NET Web Application created with Visual Studio | by Cardi DeMonaco Jr</title>
+    <title>#spaceTravel, a .NET Web Application created with Visual Studio | by Cardi DeMonaco Jr | 2016</title>
     <style type="text/css">
         body{ color: whitesmoke; }
         a{ color: White; }
