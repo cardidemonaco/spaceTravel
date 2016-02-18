@@ -72,4 +72,47 @@ Partial Class CreateAPurePath_WithADBQuery
             lblLastSubmitted.Text = ex.Message
         End Try
     End Sub
+
+    Protected Function QuerySpaceTravelDatabase() As Integer
+
+        Dim x As Integer = 0
+
+        Try
+            Dim conn As New SqlConnection(ConfigurationManager.ConnectionStrings("cd-dt-sql2012_test2").ConnectionString)
+            Dim cmd As New SqlCommand("INSERT INTO audit VALUES ('" + Now.ToString + "')", conn)
+            conn.Open() 'Open connection
+            cmd.ExecuteScalar() 'Execute SQL statement
+            conn.Close() 'Close connection
+        Catch ex As Exception
+            x = 1
+        End Try
+
+        Return x
+    End Function
+
+    Protected Function QuerySpaceTravelDatabase2() As Integer
+
+        Dim x As Integer = 0
+
+        Try
+            Dim conn As New SqlConnection(ConfigurationManager.ConnectionStrings("cd-dt-sql2012_test2").ConnectionString)
+            Dim cmd As New SqlCommand("INSERT INTO audit ('" + Now.ToString + "')", conn)
+            conn.Open() 'Open connection
+            cmd.ExecuteScalar() 'Execute SQL statement
+            conn.Close() 'Close connection
+        Catch ex As Exception
+            x = 1
+        End Try
+
+        Return x
+    End Function
+
+
+    Protected Sub btnQueryViaMethod_Click(sender As Object, e As EventArgs) Handles btnQueryViaMethod.Click
+
+        QuerySpaceTravelDatabase()
+        QuerySpaceTravelDatabase2()
+
+    End Sub
+
 End Class

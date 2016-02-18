@@ -16,7 +16,7 @@
                 Value="With a Database Query" NavigateUrl="~/CreateAPurePath/WithADatabaseQuery.aspx">
                 <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithADatabaseQuery.aspx" Text="And WHERE Clause" Value="With a Database Query"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithADBQuery.aspx" Text="Taking Advantage of Statement Aggregation" Value="With a Database Query that takes advantage of Statement Aggregation"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/Database/RunStoredProcedure.aspx" Text="As a Stored Procedure (with Parameters?)" Value="That Has a Stored Procedure (with Parameters?)"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithAStoredProcedure.aspx" Text="As a Stored Procedure (with Parameters?)" Value="That Has a Stored Procedure (with Parameters?)"></asp:MenuItem>
             </asp:MenuItem>
             <asp:MenuItem 
                 Text="Capturing Values..." Value="Capturing Values" NavigateUrl="~/CreateAPurePath/WithDeepObjectAccess.aspx">
@@ -30,12 +30,15 @@
                 Value="With a Conversion"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithAVisualBasicClass.aspx" Text="With a Visual Basic Class" Value="With a Visual Basic Class"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/img/moon.jpg" Text="That Contains an Image" Value="That Contains an Image"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithThirdParty.aspx" Text="With Third Party requests" Value="With Third Party requests"></asp:MenuItem>
         </asp:MenuItem>
         <asp:MenuItem Text="UEM: Create a Visit..." Value="UEM: Create a Visit..." NavigateUrl="~/Pages/Page01.aspx">
             <asp:MenuItem NavigateUrl="~/Pages/Page01.aspx" 
                 Text="With Many Different Web Requests / Page Actions" 
                 Value="With Many Different Web Requests / Page Actions"></asp:MenuItem>
-            <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/WithXHR.aspx" Text="With XHR (?)" Value="With XHR (?)"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/WithXHR.aspx" Text="With Ajax XHR Detection" Value="With Ajax XHR Detection">
+                <asp:MenuItem NavigateUrl="~/AngularJS/Angular2.aspx" Text="AngularJS" Value="AngularJS"></asp:MenuItem>
+            </asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/WithManuallyDefinedLocation.aspx" Text="With a Manually Defined Location" Value="With a Manually Defined Location"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/WithAnIframe.aspx" Text="With an IFRAME" Value="With an IFRAME"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/Cookies.aspx" Text="With a Cookie" Value="With a Cookie"></asp:MenuItem>
@@ -53,7 +56,7 @@
             <asp:MenuItem Text="JavaScript Example" Value="JavaScript Example" NavigateUrl="~/JavaScriptADK/JavaScriptADK_Examples.aspx"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/Silverlight/SilverlightApplicationTestPage.aspx" Text="Silverlight Example" Value="Silverlight Example"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/JavaScriptADK/SUPDT-5037.aspx" Text="SUPDT-5037" Value="SUPDT-5037"></asp:MenuItem>
-            <asp:MenuItem NavigateUrl="~/JavaScriptADK/JavaScriptADK_Examples_6-1.aspx" Text="endVisit" Value="endVisit"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/JavaScriptADK/JavaScriptADK_Examples_6-2.aspx" Text="endVisit" Value="endVisit"></asp:MenuItem>
         </asp:MenuItem>
         <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithATaggedWebRequest.aspx" Text="Run Load Test" Value="Run Load Test"></asp:MenuItem>
         <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithPerformanceWarehouseData.aspx" Text="dynaTrace Stats" Value="dynaTrace Stats"></asp:MenuItem>

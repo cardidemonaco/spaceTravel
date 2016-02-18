@@ -54,4 +54,27 @@ Partial Class CreateAPurePath_WithADatabaseQueryAndStatementAggregation
             conn.Close() 'Close connection
         End Try
     End Sub
+
+    Protected Function QuerySpaceTravelDatabase() As Integer
+
+        Dim x As Integer = 0
+
+        Try
+            Dim conn As New SqlConnection(ConfigurationManager.ConnectionStrings("cad_dt_dotnet_BlankWebsiteConnectionString").ConnectionString)
+            Dim cmd As New SqlCommand("INSERT INTO audit (" + Now.ToString + ")")
+            cmd.ExecuteScalar() 'Execute SQL statement
+            conn.Close() 'Close connection
+        Catch ex As Exception
+            x = 1
+        End Try
+
+        Return x
+    End Function
+
+  
+    Protected Sub btnQueryViaMethod_Click(sender As Object, e As EventArgs) Handles btnQueryViaMethod.Click
+
+        QuerySpaceTravelDatabase()
+
+    End Sub
 End Class

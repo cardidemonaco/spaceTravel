@@ -8,7 +8,14 @@ Partial Class Math_Algebra
     End Sub
 
     Protected Sub btnFloor_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnFloor.Click
+
+
+
         Threading.Thread.Sleep(txtDelay.Text)
+
+
         txtFloor.Text = Decimal.Floor(txtFloor.Text)
+        txtFloor.Text = Decimal.Floor(txtFloor.Text + 1)
+
     End Sub
 End Class

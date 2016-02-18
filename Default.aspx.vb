@@ -4,13 +4,21 @@ Partial Class DefaultHome
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        If Not IsPostBack Then
-            'Reload Grid View for Links every time, if post back or not...
-            Dim dc As New DataClassesDataContext
-            Dim allLinks As Object = From l In dc.links Select l.link_name, l.link_url
-            gvLinks.DataSource = allLinks
-            gvLinks.DataBind()
-        End If
+        Try
+
+            If Not IsPostBack Then
+                'Reload Grid View for Links every time, if post back or not...
+                Dim dc As New DataClassesDataContext
+                Dim allLinks As Object = From l In dc.links Select l.link_name, l.link_url
+                gvLinks.DataSource = allLinks
+                gvLinks.DataBind()
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+
 
     End Sub
 

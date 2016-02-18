@@ -24,6 +24,9 @@
         Last Submitted:
         <asp:Label ID="lblLastSubmitted" runat="server" Text="Label" ForeColor="Green"></asp:Label>
         <br />
+        <br />
+        <asp:Button ID="btnQueryViaMethod" runat="server" Text="Submit Query via Method instead of directly in Sub" />
+        <br />
  
     </div>
 </asp:Content>
