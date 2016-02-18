@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b95f27dc-7f48-4576-a936-8837db01a66f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/EastpointeCityCouncil.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EastpointeCityCouncil.wsdl" MetadataType="Wsdl" ID="07491d00-7668-43df-810d-79411ddc7e01" SourceId="1" SourceUrl="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/EastpointeCityCouncil.asmx?wsdl" />
+    <MetadataFile FileName="EastpointeCityCouncil.disco" MetadataType="Disco" ID="696824c2-21c4-45cc-95e1-3df13433756a" SourceId="1" SourceUrl="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/EastpointeCityCouncil.asmx?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

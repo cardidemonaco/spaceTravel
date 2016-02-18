@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/EastpointeCityCouncil.asmx?wsdl" docRef="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/EastpointeCityCouncil.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/EastpointeCityCouncil.asmx" xmlns:q1="http://tempuri.org/" binding="q1:EastpointeCityCouncilSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://cd-dotnet4-2.clients.nasa.cpwr.corp:200/WebServices/EastpointeCityCouncil.asmx" xmlns:q2="http://tempuri.org/" binding="q2:EastpointeCityCouncilSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -18,7 +18,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{c64579cd-6c12-486d-ae39-fd031ec3ef8b}</ProjectGuid>
     <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
-    <SourceWebVirtualPath>/cardidemonaco-work spaceTravel</SourceWebVirtualPath>
+    <SourceWebVirtualPath>/Web</SourceWebVirtualPath>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SourceWebProject>
     </SourceWebProject>
