@@ -32,7 +32,7 @@
             <asp:MenuItem NavigateUrl="~/img/moon.jpg" Text="That Contains an Image" Value="That Contains an Image"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithThirdParty.aspx" Text="With Third Party requests" Value="With Third Party requests"></asp:MenuItem>
         </asp:MenuItem>
-        <asp:MenuItem Text="UEM: Create a Visit..." Value="UEM: Create a Visit..." NavigateUrl="~/Pages/Page01.aspx">
+        <asp:MenuItem Text="UEM: Create a Visit..." Value="UEM: Create a Visit..." NavigateUrl="~/Pages/Page01">
             <asp:MenuItem NavigateUrl="~/Pages/Page01.aspx" 
                 Text="With Many Different Web Requests / Page Actions" 
                 Value="With Many Different Web Requests / Page Actions"></asp:MenuItem>
@@ -42,8 +42,11 @@
             <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/WithManuallyDefinedLocation.aspx" Text="With a Manually Defined Location" Value="With a Manually Defined Location"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/WithAnIframe.aspx" Text="With an IFRAME" Value="With an IFRAME"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/Cookies.aspx" Text="With a Cookie" Value="With a Cookie"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/W3C-Timings/Default.aspx" Text="With W3C Timings" Value="With W3C Timings"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/W3C-Timings/Default-ManualInjection.aspx" Text="With W3C Timings - Manual Injection (changed JS Agent name)" Value="With W3C Timings - Manual Injection"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/W3C-Timings/Default-ManualInjection2.aspx" Text="With W3C Timings - Manual Injection (original JS Agent name)" Value="With W3C Timings - Manual Injection (original JS Agent name)"></asp:MenuItem>
         </asp:MenuItem>
-        <asp:MenuItem Text="UEM: Health Check..." Value="UEM: Health Check" NavigateUrl="~/Pages/InjectionCheck-TestPageContainsInvalidHtml.aspx">
+        <asp:MenuItem Text="UEM: Health Check..." Value="UEM: Health Check" NavigateUrl="~/Pages/InjectionCheck-TestPageContainsInvalidHtml">
             <asp:MenuItem NavigateUrl="https://community.compuwareapm.com/community/display/DOCDT62/UEM+Health+Check" 
                 Text="DOCUMENTATION: UEM Health Check" Value="DOCUMENTATION: UEM Health Check">
             </asp:MenuItem>
