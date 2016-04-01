@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>dynaTrace JavaScript ADK</title>
+        <script type="text/javascript" src="../dtagentApi.js"></script>
+        <script type='text/javascript' src='./jwplayer/jwplayer.js'></script>
+	</head>
+
+	<body>
+	
+		<div id='mediaplayer'></div>
+		
+		<script type="text/javascript">
+		  var autostart = false;
+		  jwplayer('mediaplayer').setup({
+		    'id': 'playerID',
+		    'width': '480',
+		    'height': '360',
+		    'file': './jwplayer/video.mp4',
+		    'image': './jwplayer/preview.jpg',
+		    'autostart': autostart,
+		    'plugins': {
+			    './jwplayer/dynatrace_plugin.js': { "autostart": autostart }
+			},
+		    'modes': [
+		       {type: 'flash', src: './jwplayer/player.swf'},
+		       {type: 'download'}
+		    ]
+		  });
+		</script>
+		<h2>Streaming Media Plugin for Flash Player</h2>
+		<p>This example shows how the <a href="https://mail.google.com/mail/u/0/?shva=1#inbox">JWPlayer</a>, a flash based media player, can be extended with a plugin to report media playback information back to the dynaTrace Server using the JavaScript ADK. While this plugin is JWPlayer specific, a lot of Flash based media players offer similar APIs that should allow for similar implementations.</p>
+		<p><a target="_blank" href="http://www.longtailvideo.com/support/jw-player/jw-player-for-flash-v5/12540/javascript-api-reference#Events">JWPlayer JavaScript API Documentation</a></p>
+	
+	<a href="../index.html">Back</a>
+	</body>
+</html>

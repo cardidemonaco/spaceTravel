@@ -1,0 +1,37 @@
+<!-- Please note that this does not currently work in dynaTrace versions 6.0 & 6.1 without the appropriate fixpack update.
+There is a bug in these versions that prevents frames from correctly correlating web requests to parent actions -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Frame Loading During an XHR callback (PARENT)</title>
+<script type="text/javascript" src="../dtagentApi.js"></script>
+<script type="text/javascript">
+
+function loadiframe(){
+	var xhrAction = dynaTrace.enterXhrAction("frame load xhr", 3);
+	var xhr = window.XMLHttpRequest? new XMLHttpRequest(): new ActiveXObject("microsoft.xmlhttp");
+	xhr.open('GET', "ajax.txt", false);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4){
+			var e = document.createElement("IFRAME");
+			e.src = "framecontent.html";
+			document.body.appendChild(e);
+			if (e.addEventListener) {
+				e.addEventListener("load", frameLoadedHandler, false);
+			} else if (e.attachEvent) {
+				e.attachEvent("onload", frameLoadedHandler);
+			}
+		}
+	}
+	xhr.send(null);
+
+	function frameLoadedHandler() {
+		dynaTrace.leaveXhrAction(xhrAction);
+	}
+}
+</script>
+</head>
+<body>
+	<input type="button" id="clickbutton" onclick="loadiframe(this);" value="Load a Frame"/><br />
+</body>
+</html>

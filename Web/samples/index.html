@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>dynaTrace JavaScript ADK</title>
+
+		<style type="text/css">
+			body,html{
+				font-family:sans-serif;
+			}
+			.gr{
+				color:green;
+			}
+			.rd{
+				color:red;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function init(){
+				//check if dynatrace agent is available
+				if(typeof dT_!='undefined'){
+					var agentStatus=document.getElementById('agentStatus');
+					agentStatus.innerHTML="YES!";
+					agentStatus.className="gr";
+				}
+
+			}
+
+		</script>
+
+	</head>
+
+<body onload="init();">
+<h1>dynaTrace JavaScript Agent Development Kit samples</h1>
+
+
+<table>
+	<tr>
+		<td>Javascript agent present:<td>
+		<td><div id="agentStatus" class="rd">NO!</div></td>
+	</tr>
+</table>
+
+<h2><a href="doc/index.html">Documentation</a></h2>
+
+<h2>JavaScript ADK</h2>
+<ul>
+	<li><a href="report/report.html">Report events</a></li>
+	<li><a href="report/report2.html">Report event during another action</a></li>
+	<li><a href="actions/simpleaction.html">Simple action</a></li>
+	<li><a href="actions/subaction.html">Sub action</a></li>
+	<li><a href="actions/pagechangeaction.html">Page change action</a></li>
+	<li><a href="actions/advancedaction.html">Advanced action</a></li>
+	<li><a href="actions/userinputdropdown.html">Custom action with dropdown</a></li>
+	<li><a href="customloadend/customloadend.html">Custom load end</a></li>
+	<li><a href="thirdparty/simple.html">Simple third party</a></li>
+	<li><a href="thirdparty/advanced.html">Advanced third party</a></li>
+	<li><a href="streaming/streaming.html">Streaming Media Integration with Flash Player</a></li>
+	<li><a href="xhrapi/simple.html">Simple XHR</a></li>
+	<li><a href="xhrapi/cascading.html">Cascading XHRs</a></li>
+	<li><a href="xhrapi/scripttag.html">Dynamic script tag</a></li>
+	<li><a href="xhrapi/twitter.html">Example with script tag and twitter</a></li>
+	<li><a href="xhrapi/userinput.html">Custom user input</a></li>
+	<li><a href="xhrapi/onload.html">Custom onload with XHR Request</a></li>
+	<li><a href="xhrapi/onload2.html">Custom onload with JavaScript-Created iFrame</a></li>
+	<li><a href="xhrapi/frameloadingduringxhr.html">Frame loading during an XHR callback</a></li>
+</ul>
+
+<h2>Utilities</h2>
+
+<ul>
+	<li><a href="DynaTraceFlashAdk.as">Utility for Flash/Flex applications</a></li>
+	<li><a href="flash/Example.html">Example for Flash/Flex applications</a></li>
+	<li><a href="Example.mxml">Source code for Flash/Flex Example</a></li>
+	<li><a href="DynaTrace.cs">Utility for Silverlight applications</a></li>
+</ul>
+
+</body>
+</html>
