@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/OfPuppets.master" AutoEventWireup="false" CodeFile="FifteenPuzzle.aspx.vb" Inherits="UEM_CreateAVisit_FifteenPuzzle" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script src="../Script/dtagentApi.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
    
@@ -79,37 +80,45 @@
          //Cell below empty cell was clicked...
          if ((r - 1) >= 0) {
              if (fifteenPuzzle[r - 1][c] == "") {
+                 var action = dynaTrace.enterAction("Move down", "click");
                  temp = fifteenPuzzle[r - 1][c];
                  fifteenPuzzle[r - 1][c] = fifteenPuzzle[r][c];
                  fifteenPuzzle[r][c] = temp;
                  ++moves;
+                 dynaTrace.leaveAction(action);
              }
          }
          //Cell to the right of empty cell was clicked...
          if ((c - 1) >= 0) {
              if (fifteenPuzzle[r][c - 1] == "") {
+                 var action = dynaTrace.enterAction("Move right", "click");
                  temp = fifteenPuzzle[r][c - 1];
                  fifteenPuzzle[r][c - 1] = fifteenPuzzle[r][c];
                  fifteenPuzzle[r][c] = temp;
                  ++moves;
+                 dynaTrace.leaveAction(action);
              }
          }
          //Cell above empty cell was clicked...
          if ((r + 1) <= 3) {
              if (fifteenPuzzle[r + 1][c] == "") {
+                 var action = dynaTrace.enterAction("Move up", "click");
                  temp = fifteenPuzzle[r + 1][c];
                  fifteenPuzzle[r + 1][c] = fifteenPuzzle[r][c];
                  fifteenPuzzle[r][c] = temp;
                  ++moves;
+                 dynaTrace.leaveAction(action);
              }
          }
          //Cell to the left of empty cell was clicked...
          if ((c + 1) <= 3) {
              if (fifteenPuzzle[r][c + 1] == "") {
+                 var action = dynaTrace.enterAction("Move left", "click");
                  temp = fifteenPuzzle[r][c + 1]; //save item clicked on
                  fifteenPuzzle[r][c + 1] = fifteenPuzzle[r][c];
                  fifteenPuzzle[r][c] = temp;
                  ++moves;
+                 dynaTrace.leaveAction(action);
              }
          }
 

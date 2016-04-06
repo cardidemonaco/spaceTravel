@@ -30,7 +30,6 @@
                 Value="With a Conversion"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithAVisualBasicClass.aspx" Text="With a Visual Basic Class" Value="With a Visual Basic Class"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/img/moon.jpg" Text="That Contains an Image" Value="That Contains an Image"></asp:MenuItem>
-            <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithThirdParty.aspx" Text="With Third Party requests" Value="With Third Party requests"></asp:MenuItem>
         </asp:MenuItem>
         <asp:MenuItem Text="UEM: Create a Visit..." Value="UEM: Create a Visit..." NavigateUrl="~/Pages/Page01">
             <asp:MenuItem NavigateUrl="~/Pages/Page01.aspx" 
@@ -45,6 +44,7 @@
             <asp:MenuItem NavigateUrl="~/W3C-Timings/Default.aspx" Text="With W3C Timings" Value="With W3C Timings"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/W3C-Timings/Default-ManualInjection.aspx" Text="With W3C Timings - Manual Injection (changed JS Agent name)" Value="With W3C Timings - Manual Injection"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/W3C-Timings/Default-ManualInjection2.aspx" Text="With W3C Timings - Manual Injection (original JS Agent name)" Value="With W3C Timings - Manual Injection (original JS Agent name)"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/ThirdParty.aspx" Text="With Third-Party Requests" Value="With Third-Party Requests"></asp:MenuItem>
         </asp:MenuItem>
         <asp:MenuItem Text="UEM: Health Check..." Value="UEM: Health Check" NavigateUrl="~/Pages/InjectionCheck-TestPageContainsInvalidHtml">
             <asp:MenuItem NavigateUrl="https://community.compuwareapm.com/community/display/DOCDT62/UEM+Health+Check" 

@@ -45,6 +45,7 @@
             <asp:MenuItem NavigateUrl="~/W3C-Timings/Default.aspx" Text="With W3C Timings" Value="With W3C Timings"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/W3C-Timings/Default-ManualInjection.aspx" Text="With W3C Timings - Manual Injection (changed JS Agent name)" Value="With W3C Timings - Manual Injection"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/W3C-Timings/Default-ManualInjection2.aspx" Text="With W3C Timings - Manual Injection (original JS Agent name)" Value="With W3C Timings - Manual Injection (original JS Agent name)"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/UEM-CreateAVisit/ThirdParty.aspx" Text="With Third-Party Requests" Value="With Third-Party Requests"></asp:MenuItem>
         </asp:MenuItem>
         <asp:MenuItem Text="UEM: Health Check..." Value="UEM: Health Check" NavigateUrl="~/Pages/InjectionCheck-TestPageContainsInvalidHtml">
             <asp:MenuItem NavigateUrl="https://community.compuwareapm.com/community/display/DOCDT62/UEM+Health+Check" 
