@@ -30,7 +30,6 @@
                 Value="With a Conversion"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithAVisualBasicClass.aspx" Text="With a Visual Basic Class" Value="With a Visual Basic Class"></asp:MenuItem>
             <asp:MenuItem NavigateUrl="~/img/moon.jpg" Text="That Contains an Image" Value="That Contains an Image"></asp:MenuItem>
-            <asp:MenuItem NavigateUrl="~/CreateAPurePath/WithThirdParty.aspx" Text="With Third Party requests" Value="With Third Party requests"></asp:MenuItem>
         </asp:MenuItem>
         <asp:MenuItem Text="UEM: Create a Visit..." Value="UEM: Create a Visit..." NavigateUrl="~/Pages/Page01">
             <asp:MenuItem NavigateUrl="~/Pages/Page01.aspx" 
